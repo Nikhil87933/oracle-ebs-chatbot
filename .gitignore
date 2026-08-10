@@ -86,3 +86,16 @@ temp/
 Thumbs.db
 .AppleDouble
 .LSOverride
+# Python build artifacts
+*.egg-info/
+__pycache__/
+*.pyc
+
+# Local environment
+.env
+.venv/
+
+# Tool caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
