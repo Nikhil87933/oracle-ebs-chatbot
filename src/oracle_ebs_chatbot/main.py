@@ -2,6 +2,7 @@
 
 from fastapi import FastAPI
 
+from oracle_ebs_chatbot.api.routes_chat import router as chat_router
 from oracle_ebs_chatbot.api.routes_health import router as health_router
 
 app = FastAPI(
@@ -10,3 +11,4 @@ app = FastAPI(
 )
 
 app.include_router(health_router)
+app.include_router(chat_router)

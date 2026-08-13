@@ -21,6 +21,7 @@ class OllamaClient:
     def chat(
         self,
         messages: list[dict[str, Any]],
+        tools: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
         """Send a chat request to Ollama."""
         payload = {
@@ -28,6 +29,9 @@ class OllamaClient:
             "messages": messages,
             "stream": False,
         }
+
+        if tools:
+            payload["tools"] = tools
 
         response = httpx.post(
             f"{self.host}/api/chat",
