@@ -14,6 +14,8 @@ class Settings(BaseSettings):
     ollama_host: str = "http://localhost:11434"
     ollama_model: str = ""
 
+    chatbot_default_username: str = "POC_USER"
+
     app_env: str = "development"
     log_level: str = "INFO"
 
