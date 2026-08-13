@@ -1,7 +1,17 @@
+import os
+
+import pytest
+
 from oracle_ebs_chatbot.domain.default_registry import create_default_registry
 from oracle_ebs_chatbot.llm.ollama_client import OllamaClient
 from oracle_ebs_chatbot.llm.response_parser import LlmResponseParser
 from oracle_ebs_chatbot.llm.service import LlmService
+
+if os.getenv("RUN_REAL_QWEN_TESTS") != "1":
+    pytest.skip(
+        "Real Qwen integration test disabled",
+        allow_module_level=True,
+    )
 
 
 def test_real_qwen_selects_entity_lookup() -> None:
